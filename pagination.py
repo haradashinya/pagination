@@ -82,8 +82,8 @@ def main():
 	# 1000個のアイテム
 	items = [item for item in range(0,1000)]
 
-	# 1ページにアイテムを５個表示
-	pagination = Pagination(items,5)
+	# 1ページにアイテムを10個表示
+	pagination = Pagination(items,10)
 
 	# 右端、左端にそれぞれ5この値を表示する
 	pagination.limit = 5
