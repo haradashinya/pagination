@@ -44,10 +44,14 @@ class Pagination(object):
 			del self.joined_edge[0]
 
 		elif diff_left == 0:
-			del self.joined_edge[1:3]
+			del self.joined_edge[1:self.limit+1]
+
+		if self.idx == self.limit + 1:
+			del self.joined_edge[0:2]
 
 
-		diff_right = self.joined_edge[-self.limit] - self.joined_edge[-2+self.limit]
+
+		diff_right = self.joined_edge[-self.limit] - self.joined_edge[-2-1+self.limit]
 		if diff_right == 1:
 			del self.joined_edge[-3]
 		return self.joined_edge
